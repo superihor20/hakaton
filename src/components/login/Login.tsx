@@ -3,6 +3,7 @@ import { Button, TextField } from '@mui/material';
 import { login } from '../../store/user';
 import { AuthService } from '../../services/AuthService';
 import { useAppDispatch } from '../../hooks/redux';
+import classes from './login.module.scss';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -23,21 +24,21 @@ export const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.form}>
       <TextField
-        label='E-mail'
-        variant='outlined'
+        label="E-mail"
+        variant="outlined"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
       />
       <TextField
-        label='Password'
-        variant='outlined'
+        label="Password"
+        variant="outlined"
         value={password}
         onChange={(event) => setPassword(event.target.value)}
       />
       {!!error && <span>{error}</span>}
-      <Button variant='outlined' type='submit'>
+      <Button variant="outlined" type="submit">
         Outlined
       </Button>
     </form>
