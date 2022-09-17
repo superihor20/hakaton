@@ -1,6 +1,6 @@
-import { User } from './user.schema';
+import { IUser } from './user';
 
-export const Ihor: User = {
+export const Ihor: IUser = {
   id: 1,
   lastName: 'Naidonov',
   firstName: 'Ihor',
