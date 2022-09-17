@@ -1,10 +1,10 @@
-import { Button } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { useRouter } from 'next/router';
 import { SERVER_URL } from '../../constants/url';
 import classes from './Header.module.scss';
 import { logout } from '../../store/user';
 import { LogoIcon } from '../icons/LogoIcon';
+import { Button } from '../button/Button';
 
 export const Header = () => {
   const { user, isAuth } = useAppSelector((state) => state.userReducer);
@@ -26,14 +26,10 @@ export const Header = () => {
               {user.firstName} {user.lastName[0]}
             </span>
           </div>
-          <Button style={{ color: 'yellow' }} variant="text" onClick={() => dispatch(logout())}>
-            Logout
-          </Button>
+          <Button onClick={() => dispatch(logout())}>Logout</Button>
         </div>
       ) : (
-        <Button style={{ color: 'yellow' }} variant="text" onClick={() => router.push('/login')}>
-          Login
-        </Button>
+        <Button onClick={() => router.push('/login')}>Login</Button>
       )}
     </header>
   );

@@ -1,0 +1,17 @@
+@import "styles/variables";
+
+.input {
+  background: none;
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+
+  &:focus {
+    outline: none;
+    border-color: $theme-color;
+    background-color: #fff;
+    color: black;
+  }
+}
