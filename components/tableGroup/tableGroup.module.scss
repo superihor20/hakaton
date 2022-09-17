@@ -38,4 +38,29 @@
       bottom: 0;
     }
   }
+
+  &.groupVariants5 {
+    width: 130px;
+    height: 90px;
+
+    & > :nth-child(1) {
+    }
+
+    & > :nth-child(2) {
+      bottom: 0;
+    }
+
+    & > :nth-child(3) {
+      left: 45px;
+    }
+
+    & > :nth-child(4) {
+      left: 45px;
+      bottom: 0;
+    }
+
+    & > :nth-child(5) {
+      right: 0;
+    }
+  }
 }
