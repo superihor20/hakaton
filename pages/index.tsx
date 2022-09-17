@@ -5,7 +5,8 @@ import { TableWithChair } from '../components/tableWithChair/tableWithChair';
 const Home: NextPage = () => {
   return (
     <TableGroup>
-      <TableWithChair id={1} styles={{ padding: 10 }} />
+      <TableWithChair id={1} />
+      <TableWithChair id={2} typeDirection='reverse' />
     </TableGroup>
   );
 };

@@ -1,3 +1,11 @@
 .tableGroup {
   position: relative;
+
+  &.groupVariants2 {
+    & :nth-child(1) {
+    }
+
+    & :nth-child(2) {
+    }
+  }
 }

@@ -8,9 +8,9 @@ export const TableGroup: FC<PropsWithChildren<TableGroupProps>> = ({
 }) => {
   return (
     <div
-      className={`${styles.tableGroup} groupVariants${[
-        Children.count(children),
-      ]}`}
+      className={`${styles.tableGroup} ${
+        styles[`groupVariants${Children.count(children)}`]
+      }`}
     >
       {children}
     </div>
