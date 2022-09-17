@@ -17,27 +17,51 @@ export const UserHoverCard: FC = () => {
           <p className={styles.fullName}>
             {user.lastName} {user.firstName}
           </p>
-          <p className={styles.profession}>{user.profession}</p>
+          {user.profession && <p className={styles.profession}>{user.profession}</p>}
         </div>
         <div className={styles.socials}>
-          <div className={styles.socialsItem}>
-            <img src="/instagram-black.png" alt="insta" className={styles.socialItemBlack} />
-            <div className={styles.socialsHover}>
-              <img src="/instagram-colored.png" alt="insta" className={styles.socialItemColored} />
-            </div>
-          </div>
-          <div className={styles.socialsItem}>
-            <img src="/telegram-black.png" alt="telega" className={styles.socialItemBlack} />
-            <div className={styles.socialsHover}>
-              <img src="/telegram-colored.png" alt="telega" className={styles.socialItemColored} />
-            </div>
-          </div>
-          <div className={styles.socialsItem}>
-            <img src="/linkedin-black.png" alt="insta" className={styles.socialItemBlack} />
-            <div className={styles.socialsHover}>
-              <img src="/linkedin-colored.png" alt="insta" className={styles.socialItemColored} />
-            </div>
-          </div>
+          {user.instagram && (
+            <a
+              className={styles.socialsItem}
+              href={user.instagram}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="/instagram-black.png" alt="insta" className={styles.socialItemBlack} />
+              <div className={styles.socialsHover}>
+                <img
+                  src="/instagram-colored.png"
+                  alt="insta"
+                  className={styles.socialItemColored}
+                />
+              </div>
+            </a>
+          )}
+          {user.telegram && (
+            <a
+              className={styles.socialsItem}
+              href={`https:/t.me/${user.telegram}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src="/telegram-black.png" alt="telega" className={styles.socialItemBlack} />
+              <div className={styles.socialsHover}>
+                <img
+                  src="/telegram-colored.png"
+                  alt="telega"
+                  className={styles.socialItemColored}
+                />
+              </div>
+            </a>
+          )}
+          {user.linkedIn && (
+            <a className={styles.socialsItem} href={user.linkedIn} target="_blank" rel="noreferrer">
+              <img src="/linkedin-black.png" alt="insta" className={styles.socialItemBlack} />
+              <div className={styles.socialsHover}>
+                <img src="/linkedin-colored.png" alt="insta" className={styles.socialItemColored} />
+              </div>
+            </a>
+          )}
         </div>
       </div>
     </Grow>
