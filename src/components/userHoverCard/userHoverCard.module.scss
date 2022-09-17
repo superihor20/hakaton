@@ -1,0 +1,72 @@
+.card {
+  width: 300px;
+  position: relative;
+  border: 1px solid rgb(210, 210, 210);
+  box-shadow: 1px 3px 5px rgba(2, 2, 2, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+
+  &Header {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &Avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    border: 3px solid #fff;
+  }
+
+  &Content {
+    padding: 30px 15px 15px;
+    text-align: center;
+
+    .fullName {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .profession {
+      font-size: 12px;
+      color: rgb(123, 123, 123);
+      margin-top: 5px;
+    }
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    &Item {
+      position: relative;
+
+      &:hover {
+        .socialsHover {
+          width: 100%;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    &Hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: 0;
+      transition: 0.3s;
+    }
+  }
+}

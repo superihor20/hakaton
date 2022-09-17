@@ -1,16 +1,17 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { cardReducer } from './card';
 import { userReducer } from './user';
 
 const rootReducer = combineReducers({
-    userReducer,
+  userReducer,
+  cardReducer,
 });
 
 export const setupStore = () => {
-    return configureStore({
-        reducer: rootReducer,
-        middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({ serializableCheck: false }),
-    });
+  return configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
+  });
 };
 
 export type RootState = ReturnType<typeof rootReducer>;
