@@ -39,7 +39,7 @@ export const Login = () => {
       />
       {!!error && <span className={classes.error}>{error}</span>}
       <Button variant="outlined" type="submit">
-        Войти
+        Login
       </Button>
     </form>
   );

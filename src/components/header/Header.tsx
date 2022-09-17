@@ -14,7 +14,9 @@ export const Header = () => {
 
   return (
     <header className={classes.header}>
-      <LogoIcon />
+      <button onClick={() => router.push('/')}>
+        <LogoIcon />
+      </button>
 
       {isAuth ? (
         <div className={classes.btn_group}>
@@ -24,13 +26,13 @@ export const Header = () => {
               {user.firstName} {user.lastName[0]}
             </span>
           </div>
-          <Button variant="text" onClick={() => dispatch(logout())}>
-            Выйти
+          <Button style={{ color: 'yellow' }} variant="text" onClick={() => dispatch(logout())}>
+            Logout
           </Button>
         </div>
       ) : (
-        <Button variant="text" onClick={() => router.push('/login')}>
-          Логин
+        <Button style={{ color: 'yellow' }} variant="text" onClick={() => router.push('/login')}>
+          Login
         </Button>
       )}
     </header>
