@@ -14,7 +14,7 @@ export const TableWithChair: FC<PropsWithChildren<TableWithChair>> = ({
   id,
   typeDirection = 'normal',
 }) => {
-  const user = id === 10 ? Ihor : ({} as User);
+  const user = id === 11 ? Ihor : ({} as User);
 
   return (
     <div id={'' + id} className={styles.tableWithChair}>
@@ -25,7 +25,11 @@ export const TableWithChair: FC<PropsWithChildren<TableWithChair>> = ({
         height={47}
       />
       {user.avatar && (
-        <div className={styles.avatar}>
+        <div
+          className={`${styles.avatar} ${
+            styles[`place-type__${typeDirection}`]
+          }`}
+        >
           <Image src={user.avatar} alt={user.lastName} layout='fill' />
         </div>
       )}

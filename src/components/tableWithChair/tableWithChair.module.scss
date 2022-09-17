@@ -12,8 +12,17 @@
     height: 30px;
     position: absolute;
     z-index: 1;
-    left: 50%;
-    transform: translate(-50%, -40%);
-    top: 0;
+
+    &.place-type {
+      &__normal {
+        top: -9px;
+        left: 10px;
+      }
+
+      &__reverse {
+        bottom: -5px;
+        left: 10px;
+      }
+    }
   }
 }
