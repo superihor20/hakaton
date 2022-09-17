@@ -71,7 +71,7 @@ export const UserHoverCard: FC = () => {
             </a>
           )}
         </div>
-        <Link href="#">
+        <Link href={`/profile/${user.id}`}>
           <MuiLink
             underline="hover"
             style={{
