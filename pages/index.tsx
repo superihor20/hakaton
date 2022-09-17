@@ -7,9 +7,10 @@ const Home: NextPage = () => {
     <TableGroup>
       <TableWithChair id={1} />
       <TableWithChair id={2} typeDirection='reverse' />
-      <TableWithChair id={3} />
-      <TableWithChair id={4} typeDirection='reverse' />
-      <TableWithChair id={5} />
+      <TableWithChair id={1} />
+      <TableWithChair id={2} typeDirection='reverse' />
+      <TableWithChair id={2} typeDirection='normal' />
+      <TableWithChair id={2} typeDirection='reverse' />
     </TableGroup>
   );
 };
