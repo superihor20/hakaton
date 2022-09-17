@@ -1,7 +1,9 @@
-import React, { Children, FC, PropsWithChildren } from 'react';
+import React, { Children, CSSProperties, FC, PropsWithChildren } from 'react';
 import styles from './tableGroup.module.scss';
 
-type TableGroupProps = {};
+type TableGroupProps = {
+  styles?: CSSProperties;
+};
 
 export const TableGroup: FC<PropsWithChildren<TableGroupProps>> = ({
   children,
