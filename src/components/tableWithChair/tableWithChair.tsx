@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { CSSProperties, FC, PropsWithChildren } from 'react';
-import { Ihor } from '../../api/user/user.mock';
-import { User } from '../../api/user/user.schema';
+import { IUser } from '../../models/user';
+import { Ihor } from '../../models/user.mock';
 import styles from './tableWithChair.module.scss';
 
 type TableWithChair = {
@@ -14,7 +14,7 @@ export const TableWithChair: FC<PropsWithChildren<TableWithChair>> = ({
   id,
   typeDirection = 'normal',
 }) => {
-  const user = id === 11 ? Ihor : ({} as User);
+  const user = id === 11 ? Ihor : ({} as IUser);
 
   return (
     <div id={'' + id} className={styles.tableWithChair}>
