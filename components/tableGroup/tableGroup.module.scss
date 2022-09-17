@@ -1,11 +1,20 @@
 .tableGroup {
   position: relative;
 
-  &.groupVariants2 {
-    & :nth-child(1) {
+  &.groupVariants3 {
+    width: 85px;
+    height: 90px;
+
+    & > :nth-child(1) {
     }
 
-    & :nth-child(2) {
+    & > :nth-child(2) {
+      bottom: 0;
+    }
+
+    & :nth-child(3) {
+      right: 0;
+      transform: translateY(50%);
     }
   }
 }

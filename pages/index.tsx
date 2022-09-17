@@ -7,6 +7,7 @@ const Home: NextPage = () => {
     <TableGroup>
       <TableWithChair id={1} />
       <TableWithChair id={2} typeDirection='reverse' />
+      <TableWithChair id={3} typeDirection='right' />
     </TableGroup>
   );
 };
