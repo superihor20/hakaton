@@ -1,0 +1,32 @@
+.header {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+
+  & .logo {
+    font-size: 30px;
+    color: #ffdd00;
+
+    & span {
+      font-size: 20px;
+      color: #003cff;
+    }
+  }
+
+  & .btn_group {
+    display: flex;
+    gap: 20px;
+  }
+
+  & .profile {
+    display: flex;
+    gap: 10px;
+  }
+
+
+  & .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
