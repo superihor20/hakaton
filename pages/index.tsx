@@ -1,9 +1,13 @@
 import type { NextPage } from 'next';
+import { TableGroup } from '../components/tableGroup/tableGroup';
 import { TableWithChair } from '../components/tableWithChair/tableWithChair';
-import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
-  return <div className={styles.container} />;
+  return (
+    <TableGroup>
+      <TableWithChair id={1} styles={{ padding: 10 }} />
+    </TableGroup>
+  );
 };
 
 export default Home;
