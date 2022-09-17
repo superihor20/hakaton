@@ -1,10 +1,17 @@
-import { Grow } from '@mui/material';
+import { Grow, Link as MuiLink } from '@mui/material';
+import Link from 'next/link';
 import { FC } from 'react';
-import { useAppSelector } from '../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { closeUserCard } from '../../store/card';
 import styles from './userHoverCard.module.scss';
 
 export const UserHoverCard: FC = () => {
   const { isVisible, user } = useAppSelector((state) => state.cardReducer);
+  const dispatch = useAppDispatch();
+
+  const closeCard = () => {
+    dispatch(closeUserCard());
+  };
 
   return (
     <Grow in={isVisible} style={{ background: '#fff', zIndex: 11 }}>
@@ -12,6 +19,7 @@ export const UserHoverCard: FC = () => {
         <div className={styles.cardHeader}>
           <img src="/bg.png" alt="bg" />
           <img src={user.avatar} alt={user.lastName} className={styles.cardAvatar} />
+          <img src="/close.png" alt="close" className={styles.close} onClick={closeCard} />
         </div>
         <div className={styles.cardContent}>
           <p className={styles.fullName}>
@@ -63,6 +71,21 @@ export const UserHoverCard: FC = () => {
             </a>
           )}
         </div>
+        <Link href="#">
+          <MuiLink
+            underline="hover"
+            style={{
+              margin: '0 auto',
+              display: 'block',
+              textAlign: 'center',
+              marginBottom: '20px',
+              cursor: 'pointer',
+              width: 'max-content',
+            }}
+          >
+            Open profile
+          </MuiLink>
+        </Link>
       </div>
     </Grow>
   );
