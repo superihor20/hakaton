@@ -3,7 +3,7 @@ import './tableWithChair.module.scss';
 
 type TableWithChair = {
   id: number;
-  styles: CSSProperties;
+  styles?: CSSProperties;
 };
 
 export const TableWithChair: FC<PropsWithChildren<TableWithChair>> = ({
