@@ -1,18 +1,8 @@
 import type { NextPage } from 'next';
-import { TableGroup } from '../components/tableGroup/tableGroup';
-import { TableWithChair } from '../components/tableWithChair/tableWithChair';
+import { OpenSpace } from '../components/openSpace/openSpace';
 
 const Home: NextPage = () => {
-  return (
-    <TableGroup>
-      <TableWithChair id={1} />
-      <TableWithChair id={2} typeDirection='reverse' />
-      <TableWithChair id={1} />
-      <TableWithChair id={2} typeDirection='reverse' />
-      <TableWithChair id={2} typeDirection='normal' />
-      <TableWithChair id={2} typeDirection='reverse' />
-    </TableGroup>
-  );
+  return <OpenSpace />;
 };
 
 export default Home;
