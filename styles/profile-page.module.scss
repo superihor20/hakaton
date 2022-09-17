@@ -1,3 +1,44 @@
 .container{
 
+  & .avatar{
+
+  }
+
+  & .name{
+
+  }
+
+  & .profession{
+
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    &Item {
+      position: relative;
+
+      &:hover {
+        .socialsHover {
+          width: 100%;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    &Hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: 0;
+      transition: 0.3s;
+    }
+  }
 }

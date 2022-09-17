@@ -4,7 +4,7 @@ import { IUser } from '../models/user';
 
 export class UserService {
   static async getOne(id: number): Promise<IUser> {
-    const { data } = await axios.get(`${SERVER_URL}/${id}`);
+    const { data } = await axios.get(`${SERVER_URL}/users/${id}`);
 
     return data;
   }

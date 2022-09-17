@@ -3,12 +3,10 @@ import { SERVER_URL } from '../constants/url';
 import { IUser } from '../models/user';
 
 export class AuthService {
-  static async login(email: string, password: string): Promise<IUser> {
-    const { data } = await axios.get(`${SERVER_URL}/login`, {
-      params: {
-        email,
-        password,
-      },
+  static async login(login: string, password: string): Promise<IUser> {
+    const { data } = await axios.post(`${SERVER_URL}/login/sign-in`, {
+      login,
+      password,
     });
 
     return data;
