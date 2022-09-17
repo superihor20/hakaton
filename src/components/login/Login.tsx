@@ -37,9 +37,9 @@ export const Login = () => {
         value={password}
         onChange={(event) => setPassword(event.target.value)}
       />
-      {!!error && <span>{error}</span>}
+      {!!error && <span className={classes.error}>{error}</span>}
       <Button variant="outlined" type="submit">
-        Outlined
+        Login
       </Button>
     </form>
   );
