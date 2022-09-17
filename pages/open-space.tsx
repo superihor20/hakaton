@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { LayoutWithUserCard } from '../src/components/layouts/layoutWithUserCard/layoutWithUserCard';
 import { OpenSpace } from '../src/components/openSpace/openSpace';
 
-const Home: NextPage = () => {
+const OpenSpacePage: NextPage = () => {
   return (
     <LayoutWithUserCard>
       <OpenSpace />
@@ -10,4 +10,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default OpenSpacePage;
