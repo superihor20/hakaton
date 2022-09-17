@@ -6,6 +6,14 @@
   border-radius: 10px;
   overflow: hidden;
 
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    width: 22px;
+  }
+
   &Header {
     img {
       max-width: 100%;
@@ -44,7 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
     &Item {
       position: relative;
