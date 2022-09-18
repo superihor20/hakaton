@@ -21,7 +21,13 @@ export const Header = () => {
       {isAuth ? (
         <div className={classes.btn_group}>
           <div className={classes.profile} onClick={() => router.push(`/profile/${user.id}`)}>
-            {user.avatar && <img className={classes.avatar} src={`${SERVER_URL}/${user.avatar}`} />}
+            {user.avatar && (
+              <img
+                className={classes.avatar}
+                src={`${SERVER_URL}/${user.avatar}`}
+                alt={'No photo:('}
+              />
+            )}
             <span className={classes.text}>
               {user.firstName} {user.lastName[0]}
             </span>

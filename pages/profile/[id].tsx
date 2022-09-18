@@ -2,16 +2,13 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { UserService } from '../../src/services/UserService';
 import { IUser } from '../../src/models/user';
-import { SERVER_URL } from '../../src/constants/url';
-import { Loader } from '../../src/components/loader/Loader';
 import classes from '/styles/profile-page.module.scss';
-import { Ihor } from '../../src/models/user.mock';
+import { HorizonLoader } from '../../src/components/horizonLoader/HorizonLoader';
 
 const ProfilePage = () => {
   const router = useRouter();
   const { id } = router.query;
-  // const [user, setUser] = useState({} as IUser);
-  const [user, setUser] = useState(Ihor);
+  const [user, setUser] = useState({} as IUser);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -27,9 +24,9 @@ const ProfilePage = () => {
     }
   }, [id]);
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  if (isLoading) {
+    return <HorizonLoader />;
+  }
 
   return (
     <div className={classes.container}>

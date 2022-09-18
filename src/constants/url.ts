@@ -1,1 +1,1 @@
-export const SERVER_URL = 'http://aa8b-77-120-226-129.ngrok.io';
+export const SERVER_URL = 'http://192.168.88.148:8080';
