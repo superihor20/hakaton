@@ -18,6 +18,7 @@ const MapPage = ({}) => {
         <ul className={classes.list}>
           {mapsMenuItems.map((item) => (
             <Button
+              key={item.id}
               className={item.name !== name ? classes.noActiveButton : ''}
               onClick={() => router.push(`/maps/${item.name}`)}
             >
