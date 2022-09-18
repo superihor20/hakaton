@@ -95,6 +95,20 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
+        <div className={classes.badges}>
+          <div className={classes.badgesHeader}>Badges</div>
+          <div className={classes.badgesBlock}>
+            <div className={classes.badgesItem}>
+              <img src="/beer.png" alt="beer" />
+            </div>
+            <div className={classes.badgesItem}>
+              <img src="/hookah.png" alt="beer" />
+            </div>
+            <div className={classes.badgesItem}>
+              <img src="/movie.png" alt="beer" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
