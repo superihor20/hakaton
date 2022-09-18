@@ -5,12 +5,13 @@ import { IUser } from '../../src/models/user';
 import { SERVER_URL } from '../../src/constants/url';
 import { Loader } from '../../src/components/loader/Loader';
 import classes from '/styles/profile-page.module.scss';
-import styles from '../../src/components/userHoverCard/userHoverCard.module.scss';
+import { Ihor } from '../../src/models/user.mock';
 
 const ProfilePage = () => {
   const router = useRouter();
   const { id } = router.query;
-  const [user, setUser] = useState({} as IUser);
+  // const [user, setUser] = useState({} as IUser);
+  const [user, setUser] = useState(Ihor);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -26,34 +27,75 @@ const ProfilePage = () => {
     }
   }, [id]);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <div className={classes.container}>
-      <img className={classes.avatar} src={`${SERVER_URL}/${user.avatar}`} />
-      <span className={classes.name}>
-        {user.firstName} {user.lastName}
-      </span>
-      <span className={classes.profession}>{user.profession}</span>
-      <div className={styles.socials}>
-        <div className={styles.socialsItem}>
-          <img src="/instagram-black.png" alt="insta" className={styles.socialItemBlack} />
-          <div className={styles.socialsHover}>
-            <img src="/instagram-colored.png" alt="insta" className={styles.socialItemColored} />
+      <div className={classes.wrapper}>
+        <div className={classes.header}>
+          <div className={classes.avatar}>
+            <img src={user.avatar} />
           </div>
-        </div>
-        <div className={styles.socialsItem}>
-          <img src="/telegram-black.png" alt="telega" className={styles.socialItemBlack} />
-          <div className={styles.socialsHover}>
-            <img src="/telegram-colored.png" alt="telega" className={styles.socialItemColored} />
-          </div>
-        </div>
-        <div className={styles.socialsItem}>
-          <img src="/linkedin-black.png" alt="insta" className={styles.socialItemBlack} />
-          <div className={styles.socialsHover}>
-            <img src="/linkedin-colored.png" alt="insta" className={styles.socialItemColored} />
+          <div className={classes.info}>
+            <p className={classes.fullName}>
+              {user.lastName} {user.firstName}
+            </p>
+            <p className={classes.profession}>{user.profession}</p>
+            <div className={classes.socials}>
+              {user.instagram && (
+                <a
+                  className={classes.socialsItem}
+                  href={user.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src="/instagram-black.png" alt="insta" className={classes.socialItemBlack} />
+                  <div className={classes.socialsHover}>
+                    <img
+                      src="/instagram-colored.png"
+                      alt="insta"
+                      className={classes.socialItemColored}
+                    />
+                  </div>
+                </a>
+              )}
+              {user.telegram && (
+                <a
+                  className={classes.socialsItem}
+                  href={`https:/t.me/${user.telegram}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src="/telegram-black.png" alt="telega" className={classes.socialItemBlack} />
+                  <div className={classes.socialsHover}>
+                    <img
+                      src="/telegram-colored.png"
+                      alt="telega"
+                      className={classes.socialItemColored}
+                    />
+                  </div>
+                </a>
+              )}
+              {user.linkedIn && (
+                <a
+                  className={classes.socialsItem}
+                  href={user.linkedIn}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src="/linkedin-black.png" alt="insta" className={classes.socialItemBlack} />
+                  <div className={classes.socialsHover}>
+                    <img
+                      src="/linkedin-colored.png"
+                      alt="insta"
+                      className={classes.socialItemColored}
+                    />
+                  </div>
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
